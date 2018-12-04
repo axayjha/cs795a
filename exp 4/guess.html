@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number Guess</title>
+</head>
+<body>
+	<div class="form">
+		<label for="guessField">Enter Guess</label>
+		<input type="text" name="guessField" id="guessField" class="guessField">
+		<input type="submit" value="submitGuess" id="submitGuess" >
+	</div>
+
+	<script type="text/javascript">
+		var y = Math.floor(Math.random()*10+1);
+		var guess = 1;
+		document.getElementById("submitGuess").onclick = function() {
+			var x = document.getElementById("guessField").value;
+			if(x==y) {
+				guess = 1;
+				alert("You guessed it!");
+			}
+			else if(x>y) {
+				guess++;
+				alert("Your guess is larger");
+			}
+			else {
+				guess++;
+				alert("Your guess is smaller");
+			}
+
+		}
+	</script>
+</body>
+</html>

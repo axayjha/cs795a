@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My form</title>
+	<script type="text/javascript">
+		function validate(){
+			var genderField = document.forms["myform"]["gender"];
+			if(!(genderField[0].checked || genderField[1].checked))
+			{
+				alert("Select a gender");
+				return false;
+			}
+
+			var hobbyField = document.forms["myform"]["hobby"];
+			if(!(hobbyField[0].checked || hobbyField[1].checked || hobbyField[2].checked))
+			{
+				alert("Select a hobby");
+				return false;
+			}
+
+			var emailField = document.forms["myform"]["email"];
+
+	        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+	        if (reg.test(emailField.value) == false) 
+	        {
+	            alert('Invalid Email Address');
+	            return false;
+	        }
+
+	        return true;
+	    }
+
+	</script>
+</head>
+<body>
+	<div align="center">
+	<form name="myform" method="post" onsubmit="return validate()">
+		<br/>First Name: <input type="text" name="firstname" required>
+		<br/>Last Name: <input type="text" name="lastname" required>
+		<br/>Email ID: <input type="text" name="email" required>
+		<br/>Gender: <br/>
+		<input type="radio" name="gender" value="Male">Male<br/>
+		<input type="radio" name="gender" value="Female">Female<br/>
+		Hobby:<br/>
+		<input type="checkbox" name="hobby" value="Painting">Painting<br/>
+		<input type="checkbox" name="hobby" value="Coding"> Coding <br/>
+		<input type="checkbox" name="hobby" value="Video Editing">Video Editing<br/>
+		<button type="submit" name="submit" value="submit">Submit</button>
+		<button type="reset" name="reset" value="reset">Reset</button>
+
+	</form>
+	<div>
+</body>
+</html>

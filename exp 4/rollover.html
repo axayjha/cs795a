@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rollover</title>
+	<script type="text/javascript">
+		if(document.images)
+		{
+			offButton = new Image();
+			onButton = new Image();
+			offButton.src = "img/bluebutton.gif";
+			onButton.src = "img/redbutton.gif";
+		}
+		else 
+		{
+			offButton = "";
+			onButton = "";
+			document.myButton="";
+		}
+	</script>
+</head>
+<body>
+	<a href="#" onmouseover="document.myButton.src=onButton.src" onmouseout="document.myButton.src = offButton.src">
+		<img src="img/bluebutton.gif" alt="button" width="105" height="105" border="0" name="myButton">
+	</a>
+
+</body>
+</html>
